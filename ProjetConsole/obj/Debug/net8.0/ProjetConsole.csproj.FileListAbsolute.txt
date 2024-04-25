@@ -1,0 +1,14 @@
+C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetConsole\bin\Debug\net8.0\ProjetConsole.exe
+C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetConsole\bin\Debug\net8.0\ProjetConsole.deps.json
+C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetConsole\bin\Debug\net8.0\ProjetConsole.runtimeconfig.json
+C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetConsole\bin\Debug\net8.0\ProjetConsole.dll
+C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetConsole\bin\Debug\net8.0\ProjetConsole.pdb
+C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetConsole\obj\Debug\net8.0\ProjetConsole.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetConsole\obj\Debug\net8.0\ProjetConsole.AssemblyInfoInputs.cache
+C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetConsole\obj\Debug\net8.0\ProjetConsole.AssemblyInfo.cs
+C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetConsole\obj\Debug\net8.0\ProjetConsole.csproj.CoreCompileInputs.cache
+C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetConsole\obj\Debug\net8.0\ProjetConsole.dll
+C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetConsole\obj\Debug\net8.0\refint\ProjetConsole.dll
+C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetConsole\obj\Debug\net8.0\ProjetConsole.pdb
+C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetConsole\obj\Debug\net8.0\ProjetConsole.genruntimeconfig.cache
+C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetConsole\obj\Debug\net8.0\ref\ProjetConsole.dll
