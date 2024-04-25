@@ -17,9 +17,41 @@ namespace ProjetConsole
 
         }
 
-        public void VerifierErreurSaisieUtilisateur() // optimiser cette fonction pr couvrir tous les cas d'erreur du menu principal (voir programme main) 
+        public void VerifierErreurSaisieUtilisateur()  
         {
-            Console.WriteLine("Valeur incorrecte, veuillez recommencer");
+
+            int choixUtilisateurMenuprincipal = 0;
+
+            while (choixUtilisateurMenuprincipal != 1 || choixUtilisateurMenuprincipal != 2)
+            {
+                Console.Write("Faites votre choix : ");
+                choixUtilisateurMenuprincipal = int.Parse(Console.ReadLine());
+
+                if (choixUtilisateurMenuprincipal == 1)
+                {
+                    Console.WriteLine("afficher le menu des eleves");
+                    break;
+                }
+                if (choixUtilisateurMenuprincipal == 2)
+                {
+                    Console.WriteLine("afficher le menu des cours");
+                    break;
+                }
+                if (choixUtilisateurMenuprincipal > 2 || choixUtilisateurMenuprincipal == 0)
+                {
+                    Console.WriteLine("Valeur incorrecte, veuillez recommencer"); 
+                    Console.WriteLine();
+                    //menuPrincipal.VerifierErreurSaisieUtilisateur();
+                }
+                if (choixUtilisateurMenuprincipal < 0)
+                {
+                    Console.WriteLine("Vous ne pouvez pas saisir un nombre négatif");
+                    Console.WriteLine();  
+                }
+                 
+                
+                
+            }
 
 
         }
