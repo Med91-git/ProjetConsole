@@ -12,8 +12,9 @@ namespace ProjetConsole
             menuPrincipal.AfficherOptionsMenu();
             menuPrincipal.VerifierErreurSaisieUtilisateur(); 
 
-
             
+            
+
              
 
             

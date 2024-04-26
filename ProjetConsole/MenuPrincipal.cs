@@ -6,48 +6,53 @@ using System.Threading.Tasks;
 
 namespace ProjetConsole
 {
-    internal class MenuPrincipal : IMenu
+    internal class MenuPrincipal : IMenu 
     {
+        private MenuEleves menuEleves = new MenuEleves();  // autre bug  
+        private MenuCours menuCours = new MenuCours();  
+
         public void AfficherOptionsMenu()
         {
             Console.WriteLine("1. Elèves" +
                 "\n" +
                 "2. Cours");
-            Console.WriteLine();
+            Console.WriteLine(); 
 
         }
 
-        public void VerifierErreurSaisieUtilisateur()  
+        public void VerifierErreurSaisieUtilisateur()   
         {
 
-            int choixUtilisateurMenuprincipal = 0;
+            int choixUtilisateurMenuprincipal = 0; 
 
             while (choixUtilisateurMenuprincipal != 1 || choixUtilisateurMenuprincipal != 2)
             {
-                Console.Write("Faites votre choix : ");
-                choixUtilisateurMenuprincipal = int.Parse(Console.ReadLine());
+                Console.Write("Faites votre choix : "); 
+                choixUtilisateurMenuprincipal = int.Parse(Console.ReadLine()); 
 
                 if (choixUtilisateurMenuprincipal == 1)
                 {
-                    Console.WriteLine("afficher le menu des eleves");
+                    menuEleves.AfficherOptionsMenu(); 
+                    menuEleves.VerifierErreurSaisieUtilisateur();  
                     break;
                 }
-                if (choixUtilisateurMenuprincipal == 2)
+                else if (choixUtilisateurMenuprincipal == 2)
                 {
-                    Console.WriteLine("afficher le menu des cours");
+                    menuCours.AfficherOptionsMenu();
+                    // ajouter Verifier erreur saisie Utilisateur
                     break;
                 }
-                if (choixUtilisateurMenuprincipal > 2 || choixUtilisateurMenuprincipal == 0)
+                else if (choixUtilisateurMenuprincipal > 2 || choixUtilisateurMenuprincipal == 0)
                 {
                     Console.WriteLine("Valeur incorrecte, veuillez recommencer"); 
-                    Console.WriteLine();
-                    //menuPrincipal.VerifierErreurSaisieUtilisateur();
-                }
-                if (choixUtilisateurMenuprincipal < 0)
-                {
-                    Console.WriteLine("Vous ne pouvez pas saisir un nombre négatif");
                     Console.WriteLine();  
                 }
+                else if (choixUtilisateurMenuprincipal < 0)
+                {
+                    Console.WriteLine("Vous ne pouvez pas saisir un nombre négatif");
+                    Console.WriteLine();
+                }
+                
                  
                 
                 

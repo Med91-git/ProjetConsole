@@ -3,16 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\kotto\\VisualStudioProjects\\WildCodeSchool\\Projets\\ProjetConsole\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2FE28453-9DFA-4D7D-B8AE-6CE9A019C4D8}|ProjetConsole\\ProjetConsole.csproj|c:\\users\\kotto\\visualstudioprojects\\wildcodeschool\\projets\\projetconsole\\projetconsole\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2FE28453-9DFA-4D7D-B8AE-6CE9A019C4D8}|ProjetConsole\\ProjetConsole.csproj|solutionrelative:projetconsole\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2FE28453-9DFA-4D7D-B8AE-6CE9A019C4D8}|ProjetConsole\\ProjetConsole.csproj|c:\\users\\kotto\\visualstudioprojects\\wildcodeschool\\projets\\projetconsole\\projetconsole\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2FE28453-9DFA-4D7D-B8AE-6CE9A019C4D8}|ProjetConsole\\ProjetConsole.csproj|solutionrelative:projetconsole\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2FE28453-9DFA-4D7D-B8AE-6CE9A019C4D8}|ProjetConsole\\ProjetConsole.csproj|c:\\users\\kotto\\visualstudioprojects\\wildcodeschool\\projets\\projetconsole\\projetconsole\\imenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2FE28453-9DFA-4D7D-B8AE-6CE9A019C4D8}|ProjetConsole\\ProjetConsole.csproj|solutionrelative:projetconsole\\imenu.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2FE28453-9DFA-4D7D-B8AE-6CE9A019C4D8}|ProjetConsole\\ProjetConsole.csproj|c:\\users\\kotto\\visualstudioprojects\\wildcodeschool\\projets\\projetconsole\\projetconsole\\ecole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FE28453-9DFA-4D7D-B8AE-6CE9A019C4D8}|ProjetConsole\\ProjetConsole.csproj|solutionrelative:projetconsole\\ecole.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FE28453-9DFA-4D7D-B8AE-6CE9A019C4D8}|ProjetConsole\\ProjetConsole.csproj|c:\\users\\kotto\\visualstudioprojects\\wildcodeschool\\projets\\projetconsole\\projetconsole\\menueleves.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FE28453-9DFA-4D7D-B8AE-6CE9A019C4D8}|ProjetConsole\\ProjetConsole.csproj|solutionrelative:projetconsole\\menueleves.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FE28453-9DFA-4D7D-B8AE-6CE9A019C4D8}|ProjetConsole\\ProjetConsole.csproj|c:\\users\\kotto\\visualstudioprojects\\wildcodeschool\\projets\\projetconsole\\projetconsole\\menucours.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FE28453-9DFA-4D7D-B8AE-6CE9A019C4D8}|ProjetConsole\\ProjetConsole.csproj|solutionrelative:projetconsole\\menucours.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FE28453-9DFA-4D7D-B8AE-6CE9A019C4D8}|ProjetConsole\\ProjetConsole.csproj|c:\\users\\kotto\\visualstudioprojects\\wildcodeschool\\projets\\projetconsole\\projetconsole\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FE28453-9DFA-4D7D-B8AE-6CE9A019C4D8}|ProjetConsole\\ProjetConsole.csproj|solutionrelative:projetconsole\\menuprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FE28453-9DFA-4D7D-B8AE-6CE9A019C4D8}|ProjetConsole\\ProjetConsole.csproj|c:\\users\\kotto\\visualstudioprojects\\wildcodeschool\\projets\\projetconsole\\projetconsole\\eleve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FE28453-9DFA-4D7D-B8AE-6CE9A019C4D8}|ProjetConsole\\ProjetConsole.csproj|solutionrelative:projetconsole\\eleve.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2FE28453-9DFA-4D7D-B8AE-6CE9A019C4D8}|ProjetConsole\\ProjetConsole.csproj|c:\\users\\kotto\\visualstudioprojects\\wildcodeschool\\projets\\projetconsole\\projetconsole\\cours.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2FE28453-9DFA-4D7D-B8AE-6CE9A019C4D8}|ProjetConsole\\ProjetConsole.csproj|solutionrelative:projetconsole\\cours.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,49 +37,91 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 182,
-          "SelectedChildIndex": 1,
+          "DockedWidth": 175,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "IMenu.cs",
-              "DocumentMoniker": "C:\\Users\\kotto\\VisualStudioProjects\\WildCodeSchool\\Projets\\ProjetConsole\\ProjetConsole\\IMenu.cs",
-              "RelativeDocumentMoniker": "ProjetConsole\\IMenu.cs",
-              "ToolTip": "C:\\Users\\kotto\\VisualStudioProjects\\WildCodeSchool\\Projets\\ProjetConsole\\ProjetConsole\\IMenu.cs",
-              "RelativeToolTip": "ProjetConsole\\IMenu.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAyAAAA",
+              "DocumentIndex": 3,
+              "Title": "MenuCours.cs",
+              "DocumentMoniker": "C:\\Users\\kotto\\VisualStudioProjects\\WildCodeSchool\\Projets\\ProjetConsole\\ProjetConsole\\MenuCours.cs",
+              "RelativeDocumentMoniker": "ProjetConsole\\MenuCours.cs",
+              "ToolTip": "C:\\Users\\kotto\\VisualStudioProjects\\WildCodeSchool\\Projets\\ProjetConsole\\ProjetConsole\\MenuCours.cs",
+              "RelativeToolTip": "ProjetConsole\\MenuCours.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-25T08:15:49.747Z"
+              "WhenOpened": "2024-04-26T08:48:33.103Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
+              "Title": "MenuEleves.cs",
+              "DocumentMoniker": "C:\\Users\\kotto\\VisualStudioProjects\\WildCodeSchool\\Projets\\ProjetConsole\\ProjetConsole\\MenuEleves.cs",
+              "RelativeDocumentMoniker": "ProjetConsole\\MenuEleves.cs",
+              "ToolTip": "C:\\Users\\kotto\\VisualStudioProjects\\WildCodeSchool\\Projets\\ProjetConsole\\ProjetConsole\\MenuEleves.cs",
+              "RelativeToolTip": "ProjetConsole\\MenuEleves.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAEIAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T13:58:45.173Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
               "Title": "MenuPrincipal.cs",
               "DocumentMoniker": "C:\\Users\\kotto\\VisualStudioProjects\\WildCodeSchool\\Projets\\ProjetConsole\\ProjetConsole\\MenuPrincipal.cs",
               "RelativeDocumentMoniker": "ProjetConsole\\MenuPrincipal.cs",
               "ToolTip": "C:\\Users\\kotto\\VisualStudioProjects\\WildCodeSchool\\Projets\\ProjetConsole\\ProjetConsole\\MenuPrincipal.cs",
               "RelativeToolTip": "ProjetConsole\\MenuPrincipal.cs",
-              "ViewState": "AQIAABMAAAAAAAAAAAA5wDAAAAAqAAAA",
+              "ViewState": "AQIAABgAAAAAAAAAAAAowBIAAAAhAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T14:33:10.993Z",
-              "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 152,
-          "SelectedChildIndex": 0,
-          "Children": [
+              "WhenOpened": "2024-04-25T19:32:52.483Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "Ecole.cs",
+              "DocumentMoniker": "C:\\Users\\kotto\\VisualStudioProjects\\WildCodeSchool\\Projets\\ProjetConsole\\ProjetConsole\\Ecole.cs",
+              "RelativeDocumentMoniker": "ProjetConsole\\Ecole.cs",
+              "ToolTip": "C:\\Users\\kotto\\VisualStudioProjects\\WildCodeSchool\\Projets\\ProjetConsole\\ProjetConsole\\Ecole.cs",
+              "RelativeToolTip": "ProjetConsole\\Ecole.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABwAAABVAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T14:56:53.519Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Eleve.cs",
+              "DocumentMoniker": "C:\\Users\\kotto\\VisualStudioProjects\\WildCodeSchool\\Projets\\ProjetConsole\\ProjetConsole\\Eleve.cs",
+              "RelativeDocumentMoniker": "ProjetConsole\\Eleve.cs",
+              "ToolTip": "C:\\Users\\kotto\\VisualStudioProjects\\WildCodeSchool\\Projets\\ProjetConsole\\ProjetConsole\\Eleve.cs",
+              "RelativeToolTip": "ProjetConsole\\Eleve.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAA2AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T14:55:34.386Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Cours.cs",
+              "DocumentMoniker": "C:\\Users\\kotto\\VisualStudioProjects\\WildCodeSchool\\Projets\\ProjetConsole\\ProjetConsole\\Cours.cs",
+              "RelativeDocumentMoniker": "ProjetConsole\\Cours.cs",
+              "ToolTip": "C:\\Users\\kotto\\VisualStudioProjects\\WildCodeSchool\\Projets\\ProjetConsole\\ProjetConsole\\Cours.cs",
+              "RelativeToolTip": "ProjetConsole\\Cours.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABAAAAAsAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-25T14:54:45.744Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\kotto\\VisualStudioProjects\\WildCodeSchool\\Projets\\ProjetConsole\\ProjetConsole\\Program.cs",
               "RelativeDocumentMoniker": "ProjetConsole\\Program.cs",
               "ToolTip": "C:\\Users\\kotto\\VisualStudioProjects\\WildCodeSchool\\Projets\\ProjetConsole\\ProjetConsole\\Program.cs",
               "RelativeToolTip": "ProjetConsole\\Program.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAA9AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-24T13:30:35.499Z",
               "EditorCaption": ""
