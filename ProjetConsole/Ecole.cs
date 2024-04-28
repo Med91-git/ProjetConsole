@@ -28,8 +28,7 @@ namespace ProjetConsole
 
         public void CreerNouvelEleve(Eleve eleve) // mettre en parametre un eleve    
         {
-            this.eleves.Add(eleve);  
-
+            this.eleves.Add(eleve); 
         }
 
         public void RecupererNoteEtAppreciation() // mettre en parametre un eleve et un cours

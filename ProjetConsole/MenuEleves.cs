@@ -6,32 +6,36 @@ using System.Threading.Tasks;
 
 namespace ProjetConsole
 {
-    internal class MenuEleves : IMenu 
+    internal class MenuEleves : ISousMenu 
     {
-        //private MenuPrincipal menuPrincipal = new MenuPrincipal(); // un bug vient d'ici   
         private Ecole ecole; 
         private Eleve eleve;
 
+        private MenuPrincipal menu; 
 
-        public void AfficherOptionsMenu() 
+        public void AfficherOptionsSousMenu()  
         {
-            Console.WriteLine(); 
+            Console.WriteLine();
+            Console.WriteLine("---------- Menu Eleves ----------");
+            Console.WriteLine();
             Console.WriteLine("1. Lister les élèves\n" +
                 "2. Créer un nouvel élève\n" +
                 "3. Consulter un élève existant\n" +
                 "4. Ajouter une note et une appréciation pour un cours sur un élève existant\n" +
-                "5. Revenir au menu principal");  
+                "0. Revenir au menu principal");
+            Console.WriteLine();
+            Console.WriteLine("---------------------------------");  
         }
 
-        public void VerifierErreurSaisieUtilisateur() 
+        public void VerifierSaisieUtilisateurSousMenu()  
         {
             int choixUtilisateurMenuEleves = 0;
 
-            while (choixUtilisateurMenuEleves != 1 || choixUtilisateurMenuEleves != 2 || choixUtilisateurMenuEleves != 3 || choixUtilisateurMenuEleves != 4 || choixUtilisateurMenuEleves != 5)
+            while (choixUtilisateurMenuEleves != 1 || choixUtilisateurMenuEleves != 2 || choixUtilisateurMenuEleves != 3 || choixUtilisateurMenuEleves != 4 || choixUtilisateurMenuEleves != 0)
             {
                 Console.WriteLine();
                 Console.Write("Faites votre choix : ");  
-                choixUtilisateurMenuEleves = int.Parse(Console.ReadLine()); 
+                choixUtilisateurMenuEleves = int.Parse(Console.ReadLine());  
 
                 /*if (choixUtilisateurMenuEleves == 1)
                 {
@@ -67,13 +71,22 @@ namespace ProjetConsole
                     Console.Write("Prenom du nouvel eleve : ");
                     string prenomNouvelEleve = Console.ReadLine();
 
-                    /*Console.Write("Date de naissance du nouvel eleve : "); 
+                    /*Console.Write("Date de naissance du nouvel eleve (format JJ/MM/AAAA): ");  
                     string dateDeNaissanceNouvelEleve = Console.ReadLine();*/
                     Console.WriteLine();
-                    Console.Write("Souhaitez-vous confirmer la création de cet eleve ? (répondre oui ou non)"); 
+                    Console.Write("Souhaitez-vous confirmer les informations suivantes pour la création de cet eleve ? \n");
+                    Console.WriteLine();
+                    Console.WriteLine("Nom : " + nomNouvelEleve);
+                    Console.WriteLine("Prénom : " + prenomNouvelEleve);
+                    Console.WriteLine();
+                    Console.Write("Répondre oui/non : "); 
                     string reponseConfirmationCreationEleve = Console.ReadLine();
 
-                    if (reponseConfirmationCreationEleve == "oui")
+                    // Convertir la réponse de l'utilisateur en majuscules 
+                    string reponseEnMajuscules = reponseConfirmationCreationEleve.ToUpper(); 
+
+
+                    if (reponseConfirmationCreationEleve == "oui" || reponseConfirmationCreationEleve == reponseEnMajuscules)  
                     {
                         Eleve nouvelEleve = new Eleve(nomNouvelEleve, prenomNouvelEleve); 
 
@@ -81,34 +94,42 @@ namespace ProjetConsole
 
                         ecole.CreerNouvelEleve(nouvelEleve);
                         Console.WriteLine();
-                        Console.WriteLine($"{prenomNouvelEleve} est officiellement admis au sein de l'école");  
+                        Console.WriteLine($"{prenomNouvelEleve} est officiellement admis au sein de l'école");   
 
                     }
-                    if (reponseConfirmationCreationEleve == "non")
+                    // revoir la egstion de la casse + bloc if/else sur la réponse négative
+                    /*else if (reponseConfirmationCreationEleve == "non" || reponseConfirmationCreationEleve == reponseEnMajuscules)
                     {
                         Console.WriteLine();
-                        Console.WriteLine("la création du nouvel eleve n'a pas été effectuée"); 
-
+                        Console.WriteLine("la création du nouvel eleve n'a pas été effectuée");
                     }
+                    else
+                    {
+                        Console.WriteLine("Réponse incorrecte, répondez par oui ou non");
+                    }*/
+
+
+
 
                     break;
                 }
-                /*if (choixUtilisateurMenuEleves == 3)
+                if (choixUtilisateurMenuEleves == 3)
                 {
                     // à faire 
                     break;
-                }*/
+                }
                 if (choixUtilisateurMenuEleves == 4)
                 {
                     // à faire 
+                    
                     break;
                 }
-                if (choixUtilisateurMenuEleves == 5)
+                if (choixUtilisateurMenuEleves == 0) 
                 {
-                    //RevenirAuMenuPrincipal(); 
+                    RevenirAuMenuPrincipal(); 
                     break;
                 }
-                if (choixUtilisateurMenuEleves > 5 || choixUtilisateurMenuEleves == 0)  
+                if (choixUtilisateurMenuEleves > 4)  
                 {
                     Console.WriteLine("Valeur incorrecte, veuillez recommencer");
                     Console.WriteLine();
@@ -116,18 +137,20 @@ namespace ProjetConsole
                 }
                 if (choixUtilisateurMenuEleves < 0)
                 {
-                    Console.WriteLine("Vous ne pouvez pas saisir un nombre négatif");
+                    Console.WriteLine("Vous ne pouvez pas saisir un nombre négatif"); 
                     Console.WriteLine();
                 }
                 // borner si l'utilisateur ne saisie pas un nombre (else)  
             }
         }
 
-        /*public void RevenirAuMenuPrincipal() 
+        public void RevenirAuMenuPrincipal() 
         {
-            
-            this.menuPrincipal.AfficherOptionsMenu();
-            this.menuPrincipal.VerifierErreurSaisieUtilisateur();  
-        }*/ 
+            MenuPrincipal menu = new MenuPrincipal(); 
+            Console.Clear();
+            menu.AfficherOptionsMenuPrincipal();
+            menu.VerifierSaisieUtilisateurMenuPrincipal();  
+
+        }
     }
 }

@@ -6,43 +6,56 @@ using System.Threading.Tasks;
 
 namespace ProjetConsole
 {
-    internal class MenuPrincipal : IMenu 
+    internal class MenuPrincipal : IMenuPrincipal 
     {
-        private MenuEleves menuEleves = new MenuEleves();  // autre bug  
-        private MenuCours menuCours = new MenuCours();  
-
-        public void AfficherOptionsMenu()
+        public MenuPrincipal menuPrincipal;
+        public MenuEleves menuEleves = new MenuEleves();  
+        public MenuCours menuCours = new MenuCours();  
+        
+        public MenuPrincipal()    
         {
+            this.menuPrincipal = menuPrincipal; 
+             
+        }
+
+        public void AfficherOptionsMenuPrincipal() 
+        {
+            Console.WriteLine();
+            Console.WriteLine("---------- Menu Principal ----------"); 
+            Console.WriteLine();
             Console.WriteLine("1. Elèves" +
                 "\n" +
                 "2. Cours");
-            Console.WriteLine(); 
-
+            Console.WriteLine();
+            Console.WriteLine("--------------------------------"); 
         }
 
-        public void VerifierErreurSaisieUtilisateur()   
+        public virtual void VerifierSaisieUtilisateurMenuPrincipal()    
         {
 
             int choixUtilisateurMenuprincipal = 0; 
 
             while (choixUtilisateurMenuprincipal != 1 || choixUtilisateurMenuprincipal != 2)
             {
+                Console.WriteLine();
                 Console.Write("Faites votre choix : "); 
                 choixUtilisateurMenuprincipal = int.Parse(Console.ReadLine()); 
 
                 if (choixUtilisateurMenuprincipal == 1)
                 {
-                    menuEleves.AfficherOptionsMenu(); 
-                    menuEleves.VerifierErreurSaisieUtilisateur();  
+                    Console.Clear();
+                    menuEleves.AfficherOptionsSousMenu();  
+                    menuEleves.VerifierSaisieUtilisateurSousMenu();  
                     break;
                 }
                 else if (choixUtilisateurMenuprincipal == 2)
                 {
-                    menuCours.AfficherOptionsMenu();
-                    // ajouter Verifier erreur saisie Utilisateur
+                    Console.Clear();
+                    menuCours.AfficherOptionsSousMenu();
+                    menuCours.VerifierSaisieUtilisateurSousMenu();  
                     break;
                 }
-                else if (choixUtilisateurMenuprincipal > 2 || choixUtilisateurMenuprincipal == 0)
+                else if (choixUtilisateurMenuprincipal > 2 || choixUtilisateurMenuprincipal == 0) 
                 {
                     Console.WriteLine("Valeur incorrecte, veuillez recommencer"); 
                     Console.WriteLine();  
@@ -50,7 +63,7 @@ namespace ProjetConsole
                 else if (choixUtilisateurMenuprincipal < 0)
                 {
                     Console.WriteLine("Vous ne pouvez pas saisir un nombre négatif");
-                    Console.WriteLine();
+                    Console.WriteLine(); 
                 }
                 
                  
