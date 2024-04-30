@@ -9,14 +9,9 @@ namespace ProjetConsole
     internal class MenuPrincipal : IMenuPrincipal 
     {
         public MenuPrincipal menuPrincipal;
-        public MenuEleves menuEleves = new MenuEleves();  
-        public MenuCours menuCours = new MenuCours();  
+        public MenuEleves menuEleves = new MenuEleves(); 
+        public MenuCours menuCours = new MenuCours();   
         
-        public MenuPrincipal()    
-        {
-            this.menuPrincipal = menuPrincipal; 
-             
-        }
 
         public void AfficherOptionsMenuPrincipal() 
         {
@@ -27,15 +22,15 @@ namespace ProjetConsole
                 "\n" +
                 "2. Cours");
             Console.WriteLine();
-            Console.WriteLine("--------------------------------"); 
+            Console.WriteLine("------------------------------------");  
         }
 
-        public virtual void VerifierSaisieUtilisateurMenuPrincipal()    
+        public virtual void VerifierSaisieUtilisateurMenuPrincipal()     
         {
 
             int choixUtilisateurMenuprincipal = 0; 
 
-            while (choixUtilisateurMenuprincipal != 1 || choixUtilisateurMenuprincipal != 2)
+            while (choixUtilisateurMenuprincipal != 1 || choixUtilisateurMenuprincipal != 2) 
             {
                 Console.WriteLine();
                 Console.Write("Faites votre choix : "); 
@@ -65,10 +60,11 @@ namespace ProjetConsole
                     Console.WriteLine("Vous ne pouvez pas saisir un nombre négatif");
                     Console.WriteLine(); 
                 }
+                // borner si l'utilisateur ne saisie pas un nombre (else)   
                 
-                 
-                
-                
+
+
+
             }
 
 

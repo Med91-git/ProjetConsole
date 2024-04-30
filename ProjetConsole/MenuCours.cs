@@ -33,23 +33,31 @@ namespace ProjetConsole
             while (choixUtilisateurMenuCours != 1 || choixUtilisateurMenuCours != 2 || choixUtilisateurMenuCours != 3 || choixUtilisateurMenuCours != 0)
             {
                 Console.WriteLine();
-                Console.Write("Faites votre choix : ");
+                Console.Write("Faites votre choix : "); 
                 choixUtilisateurMenuCours = int.Parse(Console.ReadLine());
 
-
+                // instanciation de la classe ecole pr gérer les actions sur la classe cours 
+                Ecole ecole = new Ecole();
+                
                 if (choixUtilisateurMenuCours == 1)
                 {
                     // à faire 
+                    Console.Clear(); 
+                    RevenirAuSousMenu(); 
                     break;
                 }
                 if (choixUtilisateurMenuCours == 2)
                 {
                     // à faire 
+                    Console.Clear();
+                    RevenirAuSousMenu();
                     break;
                 }
                 if (choixUtilisateurMenuCours == 3)
                 {
-                    // à faire 
+                    // à faire  
+                    Console.Clear();
+                    RevenirAuSousMenu(); 
                     break;
                 }
                 
@@ -59,7 +67,7 @@ namespace ProjetConsole
                     RevenirAuMenuPrincipal();
                     break;
                 }
-                if (choixUtilisateurMenuCours > 3)
+                if (choixUtilisateurMenuCours > 3)  
                 {
                     Console.WriteLine("Valeur incorrecte, veuillez recommencer"); 
                     Console.WriteLine();
@@ -69,7 +77,8 @@ namespace ProjetConsole
                     Console.WriteLine("Vous ne pouvez pas saisir un nombre négatif");
                     Console.WriteLine();
                 }
-                // borner si l'utilisateur ne saisie pas un nombre (else)  
+                // borner si l'utilisateur ne saisie pas un nombre (else)   
+                
             }
 
         }
@@ -94,7 +103,17 @@ namespace ProjetConsole
 
         }
 
-        
-
+        public void RevenirAuSousMenu()
+        {
+            Console.WriteLine();
+            Console.Write("Saisir la touche Entrer pour revenir au sous-menu : ");
+            string saisieutilisateurRetourSousMenuEleves = Console.ReadLine();
+            if (saisieutilisateurRetourSousMenuEleves == "")
+            {
+                Console.Clear();
+                AfficherOptionsSousMenu();
+                VerifierSaisieUtilisateurSousMenu();
+            }
+        } 
     }
 }

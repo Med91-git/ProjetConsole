@@ -11,6 +11,7 @@ namespace ProjetConsole
 
         void AfficherOptionsSousMenu();
         void VerifierSaisieUtilisateurSousMenu();
-        void RevenirAuMenuPrincipal();  
+        void RevenirAuMenuPrincipal();
+        void RevenirAuSousMenu(); 
     }
 }

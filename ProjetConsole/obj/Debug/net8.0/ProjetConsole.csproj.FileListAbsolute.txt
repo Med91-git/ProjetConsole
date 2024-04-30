@@ -12,3 +12,4 @@ C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetC
 C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetConsole\obj\Debug\net8.0\ProjetConsole.pdb
 C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetConsole\obj\Debug\net8.0\ProjetConsole.genruntimeconfig.cache
 C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetConsole\obj\Debug\net8.0\ref\ProjetConsole.dll
+C:\Users\kotto\VisualStudioProjects\WildCodeSchool\Projets\ProjetConsole\ProjetConsole\obj\Debug\net8.0\ProjetConsole.sourcelink.json

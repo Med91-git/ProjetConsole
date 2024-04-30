@@ -11,10 +11,10 @@ namespace ProjetConsole
         private int valeur;
         private string appreciation;
 
-        public Note(int valeur, string appreciation = null) 
+        public Note(int valeur, string appreciation = null)  
         {
             this.valeur = valeur;
-            this.appreciation = appreciation; 
+            this.appreciation = appreciation;  
         } 
 
     }
