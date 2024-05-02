@@ -10,13 +10,13 @@ namespace ProjetConsole
     internal class Ecole
     {
 
-        public List<Eleve> Eleves { get; set; }   
-        public List<Cours> Programme { get; set; }   
-        
+        public List<Eleve> Eleves { get; set; } = new List<Eleve>();  
+        public List<Cours> Programme { get; set; } = new List<Cours>();
+
         public void CreerNouvelEleve(Eleve eleve)   
         {
             this.Eleves.Add(eleve);  
-
+            
         }
 
         private bool RechercherEleve(Eleve eleve)  
@@ -74,10 +74,11 @@ namespace ProjetConsole
             {
                 Console.WriteLine("Aucun eleve n'est inscrit dans cette école"); 
             }
+            Console.WriteLine("Voici la liste des élèves existant :");
+            Console.WriteLine();
             foreach (Eleve eleve in Eleves)    
             {
                 Console.WriteLine();
-                Console.WriteLine("Voici la liste des élèves existant :");
                 Console.WriteLine("Nom : " + eleve.Nom);
                 Console.WriteLine("Prénom : " + eleve.Prenom);
                 Console.WriteLine("Date de naissance : " + eleve.DateDeNaissance);  

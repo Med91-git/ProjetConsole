@@ -22,21 +22,21 @@ namespace ProjetConsole
         public void AfficherOptionsMenuPrincipal() 
         {
             Console.WriteLine();
-            Console.WriteLine("---------- Menu Principal ----------"); 
+            Console.WriteLine("---------- Menu Principal ----------");  
             Console.WriteLine();
             Console.WriteLine("1. Elèves" +
                 "\n" +
                 "2. Cours");
             Console.WriteLine();
-            Console.WriteLine("------------------------------------");  
+            Console.WriteLine("------------------------------------"); 
         }
 
         public virtual void VerifierSaisieUtilisateurMenuPrincipal()      
         {
 
-            int choixUtilisateurMenuprincipal = 0; 
+            int choixUtilisateurMenuprincipal = 0;  
 
-            while (choixUtilisateurMenuprincipal != 1 || choixUtilisateurMenuprincipal != 2) 
+            while (choixUtilisateurMenuprincipal != 1 || choixUtilisateurMenuprincipal != 2)  
             {
                 Console.WriteLine();
                 Console.Write("Faites votre choix : "); 
@@ -49,7 +49,7 @@ namespace ProjetConsole
                     menuEleves.VerifierSaisieUtilisateurSousMenu();  
                     break;
                 }
-                else if (choixUtilisateurMenuprincipal == 2)
+                else if (choixUtilisateurMenuprincipal == 2) 
                 {
                     Console.Clear();
                     menuCours.AfficherOptionsSousMenu();

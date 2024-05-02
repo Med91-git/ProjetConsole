@@ -11,12 +11,13 @@ namespace ProjetConsole
 
         // appeler attributs de la classe Cours 
 
-        private MenuPrincipal menu; 
-        private Ecole ecole;
+        private MenuPrincipal _menu; 
+        private Ecole _ecole;
 
         public MenuCours(Ecole ecole)
         {
-            this.ecole = ecole; 
+            this._ecole = ecole; 
+            
         }
 
         public void AfficherOptionsSousMenu() 
@@ -83,7 +84,7 @@ namespace ProjetConsole
                     Console.WriteLine("Vous ne pouvez pas saisir un nombre négatif");
                     Console.WriteLine();
                 }
-                // borner si l'utilisateur ne saisie pas un nombre (else)   
+                // borner si l'utilisateur ne saisie pas un nombre (else)    
                 
             }
 
@@ -92,10 +93,10 @@ namespace ProjetConsole
         public void RevenirAuMenuPrincipal()
         {
             //Appeler les fonctions de l'interface du menu principal 
-            MenuPrincipal menu = new MenuPrincipal(ecole);
+            //MenuPrincipal menu = new MenuPrincipal(_ecole);
             Console.Clear();
-            menu.AfficherOptionsMenuPrincipal();
-            menu.VerifierSaisieUtilisateurMenuPrincipal();  
+            _menu.AfficherOptionsMenuPrincipal(); 
+            _menu.VerifierSaisieUtilisateurMenuPrincipal();  
 
         }
 
@@ -113,7 +114,7 @@ namespace ProjetConsole
         {
             Console.WriteLine();
             Console.Write("Revenir au sous-menu (saisir la touche entrer) : ");  
-            string saisieutilisateurRetourSousMenuEleves = Console.ReadLine();
+            string saisieutilisateurRetourSousMenuEleves = Console.ReadLine();  
             if (saisieutilisateurRetourSousMenuEleves == "")
             {
                 Console.Clear();

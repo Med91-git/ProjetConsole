@@ -8,18 +8,19 @@ namespace ProjetConsole
 {
     internal class MenuEleves : ISousMenu 
     {
-        private MenuPrincipal menu; 
-        private Ecole ecole;
+        private MenuPrincipal _menu; 
+        private Ecole _ecole;
 
         public MenuEleves(Ecole ecole) 
         {
-            this.ecole = ecole; 
-        
+            this._ecole = ecole; 
+            
+
         }
-        public void AfficherOptionsSousMenu()   
+        public void AfficherOptionsSousMenu()    
         {
             Console.WriteLine();
-            Console.WriteLine("---------- Menu Eleves ----------");  
+            Console.WriteLine("---------- Menu Eleves ----------");   
             Console.WriteLine();
             Console.WriteLine("1. Lister les élèves\n" +
                 "2. Créer un nouvel élève\n" +
@@ -38,12 +39,10 @@ namespace ProjetConsole
             {
                 Console.WriteLine();
                 Console.Write("Faites votre choix : ");  
-                choixUtilisateurMenuEleves = int.Parse(Console.ReadLine());
+                choixUtilisateurMenuEleves = int.Parse(Console.ReadLine()); 
 
-                // instancier la classe école car c'est elle qui a la responsabilité de gérer toutes les actions du menu sur les eleves et sur les cours !  
-                Ecole ecole = new Ecole { Eleves = new List<Eleve>(), Programme = new List<Cours>() };  
                 
-                Note noteEleve;
+                Note noteEleve; 
                 Cours coursEleve;
 
                 if (choixUtilisateurMenuEleves == 1)   
@@ -52,7 +51,7 @@ namespace ProjetConsole
                     // garder en mémoire la liste des eleves existants (ceux qui sont inscrits via la fonctionnalité CreerNouvelEleve)  
                     
                     Console.WriteLine();
-                    ecole.ListerEleves();   
+                    _ecole.ListerEleves();   
                     RevenirAuSousMenu(); 
                      
                     break;
@@ -98,7 +97,7 @@ namespace ProjetConsole
 
                         // ajouter l'eleve dans la liste des eleves
 
-                        ecole.CreerNouvelEleve(nouvelEleve);
+                        _ecole.CreerNouvelEleve(nouvelEleve);
 
                         Console.WriteLine();
 
@@ -110,7 +109,8 @@ namespace ProjetConsole
                     else if (reponseConfirmationCreationEleve == "non" || reponseConfirmationCreationEleve == reponseEnMajuscules)
                     {
                         Console.WriteLine();
-                        Console.WriteLine("la création du nouvel élève n'a pas été effectuée");      
+                        Console.WriteLine("la création du nouvel élève n'a pas été effectuée");   
+                        RevenirAuSousMenu();
                     }
                     else 
                     {
@@ -147,18 +147,19 @@ namespace ProjetConsole
 
                     // tant que l'utilisateur n'a pas quitter -> proposer d'ajouter une note à l'élève 
 
-                    RevenirAuSousMenu();
+                    RevenirAuSousMenu(); 
 
                     break;
                 }
                 if (choixUtilisateurMenuEleves == 0) 
                 {
-                    RevenirAuMenuPrincipal(); 
-                    break;
+                    //RevenirAuMenuPrincipal(); 
+                    return;
+                    //break;
                 }
                 if (choixUtilisateurMenuEleves > 4)  
                 {
-                    Console.WriteLine("Valeur incorrecte, veuillez recommencer"); 
+                    Console.WriteLine("Valeur incorrecte, veuillez recommencer");  
                     Console.WriteLine(); 
                 }
                 if (choixUtilisateurMenuEleves < 0)
@@ -172,17 +173,17 @@ namespace ProjetConsole
 
         public void RevenirAuMenuPrincipal() 
         {
-            MenuPrincipal menu = new MenuPrincipal(ecole); 
+            //MenuPrincipal menu = new MenuPrincipal(_ecole); 
             Console.Clear(); 
-            menu.AfficherOptionsMenuPrincipal();
-            menu.VerifierSaisieUtilisateurMenuPrincipal();    
+            _menu.AfficherOptionsMenuPrincipal(); 
+            _menu.VerifierSaisieUtilisateurMenuPrincipal();    
 
         }
 
         public void RevenirAuSousMenu()
         {
             Console.WriteLine();
-            Console.Write("Revenir au sous-menu (saisir la touche entrer) : "); 
+            Console.Write("Revenir au sous-menu (saisir la touche entrer) : ");  
             string saisieutilisateurRetourSousMenuEleves = Console.ReadLine();
             if (saisieutilisateurRetourSousMenuEleves == "")
             {

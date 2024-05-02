@@ -11,9 +11,9 @@ namespace ProjetConsole
             // Mettre l'instance de l'ecole en parametre dans le menu principal
             MenuPrincipal menuPrincipal = new MenuPrincipal(ecole);
 
-            menuPrincipal.AfficherOptionsMenuPrincipal();
+            menuPrincipal.AfficherOptionsMenuPrincipal(); 
             menuPrincipal.VerifierSaisieUtilisateurMenuPrincipal(); 
-
+            
             
 
 
