@@ -9,24 +9,19 @@ namespace ProjetConsole
 {
     internal class Ecole
     {
-        // créer attributs statiques pr avoir les infos suivantes (nbres de cours, nbres d'eleves) à incrémenter dans les fonctions concerner d'ajout eleve ou cours par exemple 
 
+        public List<Eleve> Eleves { get; set; }   
+        public List<Cours> Programme { get; set; }   
         
-        public List<Eleve> eleves = new List<Eleve>();  
-        public List<Cours> programme = new List<Cours>();  
-        
-
-        public Eleve CreerNouvelEleve(Eleve eleve)  // renvoyer un resultat pr prevenir a l'école qu'un nouvel eleve est inscrit 
+        public void CreerNouvelEleve(Eleve eleve)   
         {
-            this.eleves.Add(eleve); 
-
-            return eleve; 
+            this.Eleves.Add(eleve);  
 
         }
 
-        private bool RechercherEleve(Eleve eleve) 
+        private bool RechercherEleve(Eleve eleve)  
         {
-            if(this.eleves.Contains(eleve))
+            if(this.Eleves.Contains(eleve))
             {
                 return true;  
             }
@@ -36,54 +31,70 @@ namespace ProjetConsole
 
         public void ConsulterEleve(Eleve eleve)
         {
-            // Vérifier/Rechercher si l'eleve saisit par l'utilisateur existe bien dans la liste des eleves
+            // Vérifier/Rechercher si l'eleve saisit par l'utilisateur existe bien dans la liste des eleves 
             bool eleveRechercheIsExist = RechercherEleve(eleve);  
 
             // si l'eleve existe -> on affiche les infos sur l'eleve  
             if(eleveRechercheIsExist == true)
             {
-                Console.WriteLine("la fonctionnalité pour consulter un eleve a fonctionné");  
                 Console.WriteLine(); 
-                Console.WriteLine(eleve.nom);
-                Console.WriteLine(eleve.prenom);
-                Console.WriteLine(eleve.dateDeNaissance); 
+                Console.WriteLine(eleve.Nom);
+                Console.WriteLine(eleve.Prenom);
+                Console.WriteLine(eleve.DateDeNaissance); 
 
             }
             // sinon informer l'utilisateur que l'eleve recherché n'existe pas  
-            Console.WriteLine("Erreur, cet élève n'est pas inscrit dans cette l'école"); 
+            Console.WriteLine("Erreur, cet élève n'est pas inscrit dans cette l'école");   
         }
 
-        public void ListerEleves()
+        public void ListerEleves() // revoir l'algorithme pr garder l'inscirption des eleves en mémoire ou revoir comment gérer la portée des variables
         {
-            // Vérifier qu'il y a au minimum un eleve inscrit dans l'école (recupérer résultat fonction CreerNouvelEleve)  
-            Eleve nouvelEleveInscrit;
+            // Vérifier qu'il y a au minimum un eleve inscrit dans l'école  
 
-            // si inscrit dans l'ecole -> afficher la liste des éleves inscrits (qui ont été créer/admis dans l'école)
-            if (this.eleves.Count >= 1) 
+            // si l'eleve est inscrit/ajouté dans la liste des eleves -> afficher le ou les éleves inscrits (créeé/admis dans l'école)  
+
+
+            /*if (eleves.Count >= 1)  
             {
                 
-                foreach (Eleve eleve in this.eleves)
+                foreach (Eleve eleve in eleves)   
                 {
                     Console.WriteLine();
                     Console.WriteLine("Voici la liste des élèves existant :");
-                    nouvelEleveInscrit = CreerNouvelEleve(eleve);  
-                    Console.WriteLine(nouvelEleveInscrit.prenom);
-                    Console.WriteLine(nouvelEleveInscrit.dateDeNaissance); 
-                    Console.WriteLine();
+                    Console.WriteLine("Nom : " + eleve.nom);
+                    Console.WriteLine("Prénom : " + eleve.prenom);
+                    Console.WriteLine("Date de naissance : " + eleve.dateDeNaissance);  
+                    Console.WriteLine(); 
 
                 }
             }
-
             // Sinon ne rien afficher aucun eleve + afficher message d'erreur  
-            Console.WriteLine("Aucun eleve n'est inscrit dans cette école");  
+            Console.WriteLine("Aucun eleve n'est inscrit dans cette école");*/
+            if(Eleves.Count == 0)
+            {
+                Console.WriteLine("Aucun eleve n'est inscrit dans cette école"); 
+            }
+            foreach (Eleve eleve in Eleves)    
+            {
+                Console.WriteLine();
+                Console.WriteLine("Voici la liste des élèves existant :");
+                Console.WriteLine("Nom : " + eleve.Nom);
+                Console.WriteLine("Prénom : " + eleve.Prenom);
+                Console.WriteLine("Date de naissance : " + eleve.DateDeNaissance);  
+                Console.WriteLine();
+
+            }
 
         }
 
-        public void RecupererNoteEtAppreciation(Cours cours, Eleve eleve)  
+        public void RecupererNoteEtAppreciation(Eleve eleve, Cours cours, Note note)  
         {
-            // Vérifier que l'eleve existe (on peut pas ajouter une note sur un eleve qui n'existe pas) -> appeler la fonction ListerEleves 
-            // Vérifier si le cours en argument existe bien dans la liste de cours  
+            // Vérifier que l'eleve existe (on peut pas ajouter une note sur un eleve qui n'existe pas) -> appeler fonction ListerEleves 
 
+            // Vérifier si le cours en argument existe bien dans la liste de cours  -> appeler fonction ListerCours 
+
+            // si tout est ok -> ajouter la note dans la liste de notes de l'eleve pour le cours choisit par l'utilisateur
+            // rq : réfléchir comment associer la note au cours pour l'eleve
         }
 
         public void CalculerMoyenneEleve() 
@@ -95,7 +106,7 @@ namespace ProjetConsole
         {
 
         }
-        public void SupprimerCours() // mettre en parametre l'identifiant du cours 
+        public void SupprimerCours() // mettre en parametre l'identifiant du cours   
         {
 
         }

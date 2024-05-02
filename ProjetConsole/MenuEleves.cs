@@ -8,11 +8,18 @@ namespace ProjetConsole
 {
     internal class MenuEleves : ISousMenu 
     {
+        private MenuPrincipal menu; 
+        private Ecole ecole;
 
-        public void AfficherOptionsSousMenu()  
+        public MenuEleves(Ecole ecole) 
+        {
+            this.ecole = ecole; 
+        
+        }
+        public void AfficherOptionsSousMenu()   
         {
             Console.WriteLine();
-            Console.WriteLine("---------- Menu Eleves ----------"); 
+            Console.WriteLine("---------- Menu Eleves ----------");  
             Console.WriteLine();
             Console.WriteLine("1. Lister les élèves\n" +
                 "2. Créer un nouvel élève\n" +
@@ -20,52 +27,57 @@ namespace ProjetConsole
                 "4. Ajouter une note et une appréciation pour un cours sur un élève existant\n" +
                 "0. Revenir au menu principal");
             Console.WriteLine();
-            Console.WriteLine("---------------------------------");  
+            Console.WriteLine("---------------------------------"); 
         }
 
-        public void VerifierSaisieUtilisateurSousMenu()  
+        public void VerifierSaisieUtilisateurSousMenu()    
         {
-            int choixUtilisateurMenuEleves = 0;
+            int choixUtilisateurMenuEleves = 0; 
 
             while (choixUtilisateurMenuEleves != 1 || choixUtilisateurMenuEleves != 2 || choixUtilisateurMenuEleves != 3 || choixUtilisateurMenuEleves != 4 || choixUtilisateurMenuEleves != 0)
             {
                 Console.WriteLine();
                 Console.Write("Faites votre choix : ");  
-                choixUtilisateurMenuEleves = int.Parse(Console.ReadLine());  
-                
-                // instancier l'école car c'est elle qui va gérer toutes les actions du menu sur les eleves, les cours etc ...
-                Ecole ecole = new Ecole(); 
-                
+                choixUtilisateurMenuEleves = int.Parse(Console.ReadLine());
 
-                if (choixUtilisateurMenuEleves == 1)  
+                // instancier la classe école car c'est elle qui a la responsabilité de gérer toutes les actions du menu sur les eleves et sur les cours !  
+                Ecole ecole = new Ecole { Eleves = new List<Eleve>(), Programme = new List<Cours>() };  
+                
+                Note noteEleve;
+                Cours coursEleve;
+
+                if (choixUtilisateurMenuEleves == 1)   
                 {
                     Console.Clear();
-                    // garder en mémoire la liste des eleves existant (y compris ceux qui sont inscrit via la fonctionnalité CreerNouvelEleve) 
+                    // garder en mémoire la liste des eleves existants (ceux qui sont inscrits via la fonctionnalité CreerNouvelEleve)  
+                    
                     Console.WriteLine();
-                    ecole.ListerEleves();
+                    ecole.ListerEleves();   
                     RevenirAuSousMenu(); 
                      
-
                     break;
                 } 
                 if (choixUtilisateurMenuEleves == 2)  
                 {
                     Console.Clear();
                     Console.WriteLine();
-                    Console.Write("Nom du nouvel eleve : "); 
+                    Console.Write("Identifiant du nouvel élève : ");
+                    int identifiantNouvelEleve = int.Parse(Console.ReadLine());
+                    Console.Write("Nom du nouvel élève : "); 
                     string nomNouvelEleve = Console.ReadLine(); 
 
                     Console.WriteLine();
-                    Console.Write("Prenom du nouvel eleve : ");
+                    Console.Write("Prénom du nouvel élève : ");
                     string prenomNouvelEleve = Console.ReadLine();
 
-                    Console.Write("Date de naissance du nouvel eleve (format JJ/MM/AAAA): ");  
+                    Console.Write("Date de naissance du nouvel élève (format JJ/MM/AAAA): ");  
 
                     DateOnly dateDeNaissanceNouvelEleve = DateOnly.Parse(Console.ReadLine());  
                     
                     Console.WriteLine();
-                    Console.Write("Souhaitez-vous confirmer les informations suivantes pour la création de cet eleve ? \n");
+                    Console.Write("Souhaitez-vous confirmer les informations suivantes pour la création de cet élève ? \n");
                     Console.WriteLine();
+                    Console.WriteLine("Identifiant : " + identifiantNouvelEleve); 
                     Console.WriteLine("Nom : " + nomNouvelEleve);
                     Console.WriteLine("Prénom : " + prenomNouvelEleve);
                     Console.WriteLine("Date de naissance : " + dateDeNaissanceNouvelEleve);   
@@ -73,49 +85,50 @@ namespace ProjetConsole
                     Console.Write("Répondre oui/non : "); 
                     string reponseConfirmationCreationEleve = Console.ReadLine();
 
-                    // Convertir la réponse de l'utilisateur en majuscules 
-                    string reponseEnMajuscules = reponseConfirmationCreationEleve.ToUpper();
+                    // Convertir la réponse de l'utilisateur en majuscules ou en minuscules (revoir l'algorithme)
+
+                    string reponseEnMajuscules = reponseConfirmationCreationEleve.ToUpper(); 
                     string reponseEnMinuscules = reponseConfirmationCreationEleve.ToLower(); 
 
-                    // probleme -> gérer la casse 
-                    if (reponseConfirmationCreationEleve == "oui" || reponseConfirmationCreationEleve == reponseEnMajuscules)   
+                    if (reponseConfirmationCreationEleve == "oui" || reponseConfirmationCreationEleve == reponseEnMajuscules)    
                     {
-                        // tant que l'utilisateur n'a pas quitter -> on lui propose d'ajouter de nouveaux élèves
-                        
-                        Eleve nouvelEleve = new Eleve(nomNouvelEleve, prenomNouvelEleve, dateDeNaissanceNouvelEleve); 
+                        // tant que l'utilisateur n'a pas quitter -> on lui propose d'ajouter un nouvel élève
+
+                        Eleve nouvelEleve = new Eleve { Identifiant = identifiantNouvelEleve, Nom = nomNouvelEleve, Prenom = prenomNouvelEleve, DateDeNaissance = dateDeNaissanceNouvelEleve };
+
+                        // ajouter l'eleve dans la liste des eleves
 
                         ecole.CreerNouvelEleve(nouvelEleve);
-                        Console.WriteLine();
-                        Console.WriteLine($"{prenomNouvelEleve} est officiellement admis au sein de l'école");
 
-                        RevenirAuSousMenu(); 
+                        Console.WriteLine();
+
+                        Console.WriteLine($"{prenomNouvelEleve} est officiellement admis au sein de l'école");   
+
+                        RevenirAuSousMenu();  
 
                     }
                     else if (reponseConfirmationCreationEleve == "non" || reponseConfirmationCreationEleve == reponseEnMajuscules)
                     {
                         Console.WriteLine();
-                        Console.WriteLine("la création du nouvel eleve n'a pas été effectuée");     
+                        Console.WriteLine("la création du nouvel élève n'a pas été effectuée");      
                     }
                     else 
                     {
-                        Console.WriteLine("Réponse incorrecte, répondez par oui ou non"); 
+                        Console.WriteLine("Réponse incorrecte, répondez par oui ou non");  
                     }
-
-
 
 
                     break;
                 }
-                if (choixUtilisateurMenuEleves == 3)
+                if (choixUtilisateurMenuEleves == 3) 
                 {
                     Console.Clear();
                     Console.WriteLine();
                     // demander à l'utilisateur de saisir l'identifiant de l'eleve  
-                    Console.Write("Saisir le prénom de l'elève à consulter : ");
-                    string prenomEleveAConsulter = Console.ReadLine();
-                    // comment gerer le type de l'eleve au niveau de la saisie utilisateur et au niveau du parametre de la focntion consulterEleve ?
-                    // appeler la méthode ConsulterEleve 
-                    //ecole.ConsulterEleve();
+                    //Console.Write("Saisir le prénom de l'elève à consulter : ");
+                    //string prenomEleveAConsulter = Console.ReadLine();  
+                    // comment gerer le type de l'eleve au niveau de la saisie utilisateur et au niveau du parametre de la fonction consulterEleve ?
+                    // Afficher le nom de l'eleve 
                     RevenirAuSousMenu();
 
                     break;
@@ -124,12 +137,16 @@ namespace ProjetConsole
                 {
                     Console.Clear();
                     Console.WriteLine();
-                    // initialiser l'instance de la classe note 
-                    Note noteEleve;
 
 
-                    // tant que l'utilisateur n'a pas quitter -> on lui propose d'ajouter une note à l'élève 
-                    
+                    // demander à l'utilisateur sur quel élève (identifiant de l'élève) ajouter la note
+                    // demander à l'utilisateur sur quel cours (identifiant du cours) ajouter une note 
+                    // demander à l'utilisateur d'ajouter une note à l'élève -> instancier les classes notes + cours 
+                    // demander confirmation à l'utilisateur des infos saisies (eleve + cours + note)
+                    // si confirmation -> appeler la methode de classe ecole "RecupererNoteEtAppreciation" 
+
+                    // tant que l'utilisateur n'a pas quitter -> proposer d'ajouter une note à l'élève 
+
                     RevenirAuSousMenu();
 
                     break;
@@ -141,13 +158,12 @@ namespace ProjetConsole
                 }
                 if (choixUtilisateurMenuEleves > 4)  
                 {
-                    Console.WriteLine("Valeur incorrecte, veuillez recommencer");
-                    Console.WriteLine();
-                    //menuPrincipal.VerifierErreurSaisieUtilisateur();
+                    Console.WriteLine("Valeur incorrecte, veuillez recommencer"); 
+                    Console.WriteLine(); 
                 }
                 if (choixUtilisateurMenuEleves < 0)
                 {
-                    Console.WriteLine("Vous ne pouvez pas saisir un nombre négatif");  
+                    Console.WriteLine("Vous ne pouvez pas saisir un nombre négatif");   
                     Console.WriteLine();
                 }
                 // borner si l'utilisateur ne saisie pas un nombre (else)   
@@ -156,23 +172,23 @@ namespace ProjetConsole
 
         public void RevenirAuMenuPrincipal() 
         {
-            MenuPrincipal menu = new MenuPrincipal(); 
+            MenuPrincipal menu = new MenuPrincipal(ecole); 
             Console.Clear(); 
             menu.AfficherOptionsMenuPrincipal();
-            menu.VerifierSaisieUtilisateurMenuPrincipal();  
+            menu.VerifierSaisieUtilisateurMenuPrincipal();    
 
         }
 
         public void RevenirAuSousMenu()
         {
             Console.WriteLine();
-            Console.Write("Saisir la touche Entrer pour revenir au sous-menu : ");
+            Console.Write("Revenir au sous-menu (saisir la touche entrer) : "); 
             string saisieutilisateurRetourSousMenuEleves = Console.ReadLine();
             if (saisieutilisateurRetourSousMenuEleves == "")
             {
                 Console.Clear();
                 AfficherOptionsSousMenu();
-                VerifierSaisieUtilisateurSousMenu();  
+                VerifierSaisieUtilisateurSousMenu();   
             }
 
         }

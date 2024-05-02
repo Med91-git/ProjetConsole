@@ -9,9 +9,15 @@ namespace ProjetConsole
     internal class MenuCours : ISousMenu
     {
 
-        // appeler attributs de la classe Cours
+        // appeler attributs de la classe Cours 
 
-        private MenuPrincipal menu;
+        private MenuPrincipal menu; 
+        private Ecole ecole;
+
+        public MenuCours(Ecole ecole)
+        {
+            this.ecole = ecole; 
+        }
 
         public void AfficherOptionsSousMenu() 
         {
@@ -37,25 +43,25 @@ namespace ProjetConsole
                 choixUtilisateurMenuCours = int.Parse(Console.ReadLine());
 
                 // instanciation de la classe ecole pr gérer les actions sur la classe cours 
-                Ecole ecole = new Ecole();
+                //Ecole ecole = new Ecole(); 
                 
                 if (choixUtilisateurMenuCours == 1)
                 {
-                    // à faire 
+                    // fonctionnalité à faire 
                     Console.Clear(); 
                     RevenirAuSousMenu(); 
                     break;
                 }
                 if (choixUtilisateurMenuCours == 2)
                 {
-                    // à faire 
+                    // fonctionnalité à faire 
                     Console.Clear();
                     RevenirAuSousMenu();
                     break;
                 }
                 if (choixUtilisateurMenuCours == 3)
                 {
-                    // à faire  
+                    // fonctionnalité à faire  
                     Console.Clear();
                     RevenirAuSousMenu(); 
                     break;
@@ -85,8 +91,8 @@ namespace ProjetConsole
 
         public void RevenirAuMenuPrincipal()
         {
-            //Appeler les fonctions de l'interface du menu principal
-            MenuPrincipal menu = new MenuPrincipal();
+            //Appeler les fonctions de l'interface du menu principal 
+            MenuPrincipal menu = new MenuPrincipal(ecole);
             Console.Clear();
             menu.AfficherOptionsMenuPrincipal();
             menu.VerifierSaisieUtilisateurMenuPrincipal();  
@@ -106,7 +112,7 @@ namespace ProjetConsole
         public void RevenirAuSousMenu()
         {
             Console.WriteLine();
-            Console.Write("Saisir la touche Entrer pour revenir au sous-menu : ");
+            Console.Write("Revenir au sous-menu (saisir la touche entrer) : ");  
             string saisieutilisateurRetourSousMenuEleves = Console.ReadLine();
             if (saisieutilisateurRetourSousMenuEleves == "")
             {

@@ -8,14 +8,9 @@ namespace ProjetConsole
 {
     internal class Note
     {
-        private int valeur;
-        private string appreciation;
+        public int Valeur { get; init; }
+        public string Appreciation { get; init; } 
 
-        public Note(int valeur, string appreciation = null)  
-        {
-            this.valeur = valeur;
-            this.appreciation = appreciation;  
-        } 
 
     }
 }

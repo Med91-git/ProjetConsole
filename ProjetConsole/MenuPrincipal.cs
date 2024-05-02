@@ -8,10 +8,16 @@ namespace ProjetConsole
 {
     internal class MenuPrincipal : IMenuPrincipal 
     {
-        public MenuPrincipal menuPrincipal;
-        public MenuEleves menuEleves = new MenuEleves(); 
-        public MenuCours menuCours = new MenuCours();   
+        public MenuEleves menuEleves;  
+        public MenuCours menuCours; 
+        public Ecole ecole; 
         
+        public MenuPrincipal(Ecole ecole)  
+        {
+            this.ecole = ecole;
+            menuEleves = new MenuEleves(ecole);  
+            menuCours = new MenuCours(ecole);  
+        }
 
         public void AfficherOptionsMenuPrincipal() 
         {
@@ -25,7 +31,7 @@ namespace ProjetConsole
             Console.WriteLine("------------------------------------");  
         }
 
-        public virtual void VerifierSaisieUtilisateurMenuPrincipal()     
+        public virtual void VerifierSaisieUtilisateurMenuPrincipal()      
         {
 
             int choixUtilisateurMenuprincipal = 0; 

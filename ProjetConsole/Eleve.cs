@@ -8,22 +8,17 @@ namespace ProjetConsole
 {
     internal class Eleve
     {
-        private int identifiant; // pour cet attribut -> utiliser une variable static (variable de classe) 
-        public string nom; 
-        public string prenom;
-        public DateOnly dateDeNaissance;
-        private List<Note> notes = new List<Note>();   
+        public int Identifiant { get; init; }   
+        public string Nom { get; init; }  
+        public string Prenom { get; init; }
+        public DateOnly DateDeNaissance { get; init; }
+        public List<Note> Notes { get; set; }   
 
-        public Eleve(string nom, string prenom, DateOnly dateDeNaissance) 
+        public Eleve()
         {
-            
-            this.nom = nom;
-            this.prenom = prenom;  
-            this.dateDeNaissance = dateDeNaissance; 
-            
+            Notes = new List<Note>(); 
+        } 
 
-        }
-        // créer un 2eme constructeur pr récupérer la note de l'eleve et l'ajouter dans sa liste de notes (voir fonctionnalité RecupererNoteEtAppreciation) 
 
     }
 }

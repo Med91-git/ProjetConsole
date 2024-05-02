@@ -6,14 +6,15 @@ namespace ProjetConsole
     {
         static void Main(string[] args)
         {
-            
-            MenuPrincipal menuPrincipal = new MenuPrincipal();
+            // Instancier la classe ecole
+            Ecole ecole = new Ecole();
+            // Mettre l'instance de l'ecole en parametre dans le menu principal
+            MenuPrincipal menuPrincipal = new MenuPrincipal(ecole);
 
             menuPrincipal.AfficherOptionsMenuPrincipal();
-            menuPrincipal.VerifierSaisieUtilisateurMenuPrincipal();   
+            menuPrincipal.VerifierSaisieUtilisateurMenuPrincipal(); 
 
-
-
+            
 
 
 

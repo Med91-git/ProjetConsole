@@ -8,13 +8,14 @@ namespace ProjetConsole
 {
     internal class Cours
     {
-        private int identifiant;  
-        private string nom;
+        public int Identifiant { get; init; }    
+        public string Nom { get; init; }  
+        public Note note { get; init; } 
 
-        public Cours(int identifiant, string nom) 
+        public Cours()   
         {
-            this.identifiant = identifiant; 
-            this.nom = nom; 
+            
+            note = new Note(); // lors de la création d'un cours, il y aura forcément une note associée pour evaluer l'élève 
 
         }
     }
