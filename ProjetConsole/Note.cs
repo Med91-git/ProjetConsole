@@ -9,8 +9,9 @@ namespace ProjetConsole
     internal class Note
     {
         public int Valeur { get; init; }
-        public string Appreciation { get; init; } 
+        public string Appreciation { get; init; }  
 
 
+        
     }
 }
